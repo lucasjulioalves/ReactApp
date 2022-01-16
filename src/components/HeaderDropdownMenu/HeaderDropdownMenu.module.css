@@ -1,3 +1,12 @@
+.Header__Container {
+    position: absolute;
+    top: 0;
+    left: 0;
+    }
+
+.Header__Container:hover .Header__Dropdown {
+    display: block;
+}
 .Header__Dropdown {
     position: absolute;
     top: 46px;
@@ -6,9 +15,11 @@
     box-shadow: 0px 8px 16px 0px rgba(0,0,0,0.2);
     padding: 12px 16px;
     z-index: 1;
+    display: none;
 }
   
 .Header__paragraph {
     color: black;
 }
+
 
