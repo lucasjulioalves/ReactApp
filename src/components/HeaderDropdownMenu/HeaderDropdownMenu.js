@@ -4,36 +4,38 @@ import styles from './HeaderDropdownMenu.module.css';
 class HeaderDropdownMenu extends React.Component {
 
   _menu;
-  _parentRef;
-  _width;
-  _height;
 
   constructor(props) {
     super(props);
     this._menu = props.menu;
-    this._parentRef = props.parentRef
+    this._menu.forEach(element => {
+      if(element.subcategories) {
+        element.hasSubcategories = true;
+      }
+    });
   }
 
   render() {
-    return <div className={styles.Header__Container} style={
-      {width: `${this._width}`, height: `${this._height}`}
-    }>
-      <div className={styles.Header__Dropdown}>
+    return <div>
       {
         this._menu.map((menu) => {
-          return <p className={styles.Header__paragraph} key={menu.text}>{menu.text}</p>
+          return <span className={styles.Header__submenuContainer} key={menu.text}>
+              <p className={styles.Header__paragraph} >{menu.text}</p>
+              { menu.hasSubcategories && (
+                <div className={styles.Header__submenu}> 
+                  { 
+                    menu.subcategories.map((submenu) => {
+                      return <p className={styles.Header__paragraph} key={submenu.text}>{submenu.text}</p>
+                    })
+                  }
+                </div>
+              )}
+            </span>
         })
       }
       </div>
-    </div> 
   }
 
-  componentDidMount() {
-    setTimeout(() => {
-      this._width = this._parentRef.current.offsetWidth;
-      this._height = this._parentRef.current.offsetHeight;
-    }, 0)
-  }
 }
 
 export default HeaderDropdownMenu;

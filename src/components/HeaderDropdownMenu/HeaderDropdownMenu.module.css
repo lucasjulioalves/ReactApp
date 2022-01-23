@@ -1,25 +1,21 @@
-.Header__Container {
-    position: absolute;
-    top: 0;
-    left: 0;
-    }
+  
+.Header__paragraph {
+    color: black;
+    margin: 5px;
+}
 
-.Header__Container:hover .Header__Dropdown {
+.Header__submenuContainer:hover .Header__submenu{
     display: block;
 }
-.Header__Dropdown {
+
+.Header__submenu {
     position: absolute;
-    top: 46px;
+    left: 194px;
+    top: 0;
     background-color: #f9f9f9;
     min-width: 160px;
-    box-shadow: 0px 8px 16px 0px rgba(0,0,0,0.2);
+    box-shadow: 0px 8px 16px 0px rgb(0 0 0 / 20%);
     padding: 12px 16px;
     z-index: 1;
     display: none;
 }
-  
-.Header__paragraph {
-    color: black;
-}
-
-

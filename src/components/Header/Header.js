@@ -9,11 +9,7 @@ class Header extends React.Component {
   _mainOptions = MainOptions;
   _departaments = Departaments;
   _show = false;
-  _parentDivRef;
-  constructor() {
-    super();
-    this._parentDivRef = React.createRef();
-  }
+
   render() {
     return (
       <div className={styles.Header} data-testid="Header">
@@ -24,7 +20,6 @@ class Header extends React.Component {
           >
             <HeaderDropdownMenu  
               menu={this._departaments}
-              parentRef={this._parentDivRef}
               >
             </HeaderDropdownMenu>
           </div>
@@ -38,10 +33,6 @@ class Header extends React.Component {
        }
     </div>
     )
-  }
-
-  setIsShown(show) {
-    this._show = show;
   }
 }
 
