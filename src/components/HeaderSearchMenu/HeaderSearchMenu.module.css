@@ -2,4 +2,19 @@
     padding: 0px 1.5rem;
     background: rgb(0, 96, 177);
     height: 112px;
+    display: flex;
+    justify-content: space-evenly;
+}
+
+.HeaderSearchMenu__options {
+    width: 75%;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.HeaderSeachMenu__icon {
+    color: white;
+    size: 96px;
+    cursor: pointer;
 }
