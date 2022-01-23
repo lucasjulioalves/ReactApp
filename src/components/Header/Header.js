@@ -1,37 +1,17 @@
-import React, { useRef } from 'react';
-import Departaments from '../../constants/header-departaments.constants';
-import MainOptions from '../../constants/header-main-options.constants';
-import HeaderDropdownMenu from '../HeaderDropdownMenu/HeaderDropdownMenu';
+import React from 'react';
+import HeaderTabs from '../HeaderTabs/HeaderTabs';
+import HeaderSearchMenu from '../HeaderSearchMenu/HeaderSearchMenu';
+
 import styles from './Header.module.css';
 
 class Header extends React.Component {
   
-  _mainOptions = MainOptions;
-  _departaments = Departaments;
-  _show = false;
-
   render() {
     return (
-      <div className={styles.Header} data-testid="Header">
-        <div className={styles.Header__item}
-          ref={this._parentDivRef}>
-          <span>Todos os departamentos</span>
-          <div className={styles.Header__Dropdown}
-          >
-            <HeaderDropdownMenu  
-              menu={this._departaments}
-              >
-            </HeaderDropdownMenu>
-          </div>
-        </div>
-       {
-         this._mainOptions.map((option) => {
-          return <div className={styles.Header__item}key={option.text}>
-            {option.text}
-            </div>
-         })
-       }
-    </div>
+      <div>
+        <HeaderSearchMenu></HeaderSearchMenu>
+        <HeaderTabs></HeaderTabs>
+      </div>
     )
   }
 }
